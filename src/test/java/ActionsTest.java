@@ -10,10 +10,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ActionsTest {
     @Test
-    void CheckLoadPage (){
+    void CheckLoadPageTest (){
         open("https://github.com/");
-        $(byText("Solutions")).hover();
-        $(byText("Enterprises")).click();
+        $$("button[class^='HeaderMenu-link']").findBy(text("Solutions")).hover();
+        $$("a[class^='HeaderMenu-dropdown-link ']").findBy(text("Enterprises")).click();
         withTagAndText("h1","The AI-powered developer platform");
     }
 
